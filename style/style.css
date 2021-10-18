@@ -185,7 +185,7 @@ nav {
 }
 
 .nav-link:link, .nav-link:visited {
-    border: 2px solid transparent;
+    border-top: 2px solid transparent;
     display: flex;
 }
 
@@ -616,13 +616,14 @@ footer li {
     
     .nav-link, .nav-link:link, .nav-link:active {
         width: 50%;
-        border: 2px solid transparent;
+        border-top: 2px solid transparent;
         border-bottom: 2px solid var(--clr-light-grey);
     }
 
     .nav-link:hover, .nav-link:active {
         color: var(--clr-blue);
         border: none;
+        border-top: 2px solid transparent;
         border-bottom: 2px solid var(--clr-blue);
     }
 

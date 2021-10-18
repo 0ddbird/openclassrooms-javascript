@@ -1,6 +1,6 @@
 # Soutenance Projet 2 : Booki
 
-## Support personnel en préparation à la visio 
+## Support personnel en préparation à la visio.
 
 ### 1. Rappel du contexte du projet  (2 minutes)
 
@@ -31,15 +31,20 @@ Présenté sur Firefox via live-server
 
 - Sections : Header / Menu de navigation, Section 1: Welcome, S2: Search, S3: Accomodation results / S4: Activity results / Footer
 
-#### 3.3 Structure CSS (1 minutes)
+#### 3.3 Structure CSS (1 minute)
 
 - Survol de la structure du fichier style.css via l'index (global / sections / media queries)
 - Focus 1 : règles globales (variables, base des cartes, animations)
 - Focus 2 : règles spécifiques aux media queries
 
-### 4. Points de complexité (2.30 minutes)
+#### 3.4 Points de complexité (2.30 minutes)
 
-#### Point de complexité 1 : animation de box-shadow
+##### 3.4.1 Point de complexité 1 : flexbox (1min)
+- Notion de container/item, notion d'axe (main/cross)
+- Disposition des éléments et limites avant breakpoints (ex. shrink d'élements contenant du texte)
+- Overlap de containers (principalement lors d'imbrication de containers flex en colonne) -> équilibre entre display flex et block
+
+##### 3.4.2 Point de complexité 2 : animation de box-shadow (45s)
 
 En Material Design, les ombres sont complexes car un élément a plusieurs attributs pour sa propriété box-shadow. 
 Cela génère un rendu plus réalistes qu'une ombre simple.
@@ -86,7 +91,7 @@ Sources :
     } 
 ```
 
-#### Superposition des pseudo-éléments et des liens hypertextes
+##### 3.4.3 Superposition des pseudo-éléments et des liens hypertextes (45s)
 
 Complexité générée par l'utilisation de pseudo-éléments par rapport à l'empilement des couches sur l'axe z (objectif : garder les liens au niveau le plus haut pour être cliquables)
 
