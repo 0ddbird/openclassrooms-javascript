@@ -1,0 +1,684 @@
+/* Index 
+
+0 || GLOBAL VARIABLES
+
+1 || GLOBAL SETTINGS
+    1.1 | GENERAL PAGE LAYOUT
+    1.2 | CARD DESIGN
+    1.3 | CARD SHADOW ANIMATION
+    1.4 | RATING STARS PROPERTIES
+
+2 || DESKTOP LAYOUT
+    2.1 | HEADER  : NAVIGATION MENU
+    2.2 | SECTION : WELCOME
+    2.3 | SECTION : SEARCH
+    2.4 | SECTION : ACCOMODATIONS RESULTS
+        2.4.1 | CONTAINER : CITY RESULTS
+        2.4.2 | CONTAINER : MOST POPULAR RESULTS
+    2.5 | SECTION : ACTIVITIES RESULTS
+    2.6 | FOOTER
+
+3 || MEDIA QUERIES SPECIFIC RULES
+    3.1 | TABLET MEDIA QUERY
+    3.2 | MOBILE MEDIA QUERY
+
+
+Tip: you can jump to a specific section by searching for index name or id. ex : [CTRL + F] "3 ||" or [CTRL + F] "2.4.1 |"
+
+*/
+
+
+/* ====================== 0 || GLOBAL VARIABLES ====================== */
+
+:root {
+
+    /* Default colors */
+    --clr-blue: #0065FC;
+    --clr-light-blue: #DEEBFF;
+    --clr-light-grey: #F2F2F2;
+    --clr-text-default: #000;
+
+    /* FontAwesome icons */
+    --fa-eco: "\f53a";
+    --fa-fam: "\f1ae";
+    --fa-rom: "\f004";
+    --fa-ani: "\f6d3";
+    --fa-info: "\f129";
+
+    /* Titles font weight */
+    --fw-bold: 700;
+    
+    /*Card font size*/
+    --fs--small: 16px;
+
+    /* Box shadow */
+    --box-shadow:           0px 1px 1px rgba(0, 0, 0, 0.12),
+                            0px 2px 2px rgba(0, 0, 0, 0.12),
+                            0px 4px 4px rgba(0, 0, 0, 0.12),
+                            0px 8px 8px rgba(0, 0, 0, 0.12);
+    
+    --box-shadow-hover:     0px 2px 2px rgba(0, 0, 0, 0.14),
+                            0px 4px 4px rgba(0, 0, 0, 0.14),
+                            0px 8px 8px rgba(0, 0, 0, 0.14),
+                            0px 16px 16px rgba(0, 0, 0, 0.14);
+                    
+}
+
+/* ====================== 1 || GLOBAL SETTINGS ====================== */
+
+/* ----------- 1.1 | GENERAL PAGE LAYOUT ----------- */
+
+* {
+    font-family: 'Raleway', sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    width: 100%;
+    font-size: 22px;
+}
+
+#welcome-title {font-size: 30px;}
+
+a {
+    text-decoration: none;
+    color:var(--clr-text-default);
+    cursor: pointer;
+    position: relative; /* Relation position for City Results card links */
+    z-index: 3; /* Custom z-index for <a> links to stay on top of .pseudo-hover::after layer */
+}
+
+button {cursor: pointer;}
+
+section {margin-bottom: 50px;}
+
+section h2 {font-size: 30px;}
+
+
+/* ----------- 1.2 | CARD DESIGN ----------- */
+/* Applies to every type of cards in the page */
+
+.card {
+    background-color: white;
+    box-shadow: var(--box-shadow);
+    font-size: var(--fs--small);
+    transform: translateY(0px) scale(1);
+    transition: transform .25s ease;
+}
+
+
+/* ----------- 1.3 | CARD SHADOW ANIMATION ----------- */
+/* Applies to every type of cards in the page */
+
+.card:hover {
+    transform: translateY(-2px) scale(1.02);
+    transition: transform .25s ease;
+}
+
+.pseudo-hover {position: relative;}
+
+.pseudo-hover::after { 
+    content:'';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    border-radius: 25px;
+    box-shadow: var(--box-shadow-hover);
+    transition: opacity .25s ease;
+}
+
+.cr-card.pseudo-hover::after {margin: -5px;}
+
+.pseudo-hover:hover::after {
+    opacity: 1;
+    transition: opacity .25s ease;
+} 
+
+
+/* ----------- 1.4 | RATING STARS PROPERTIES ----------- */
+
+/* Blue star */
+.fa-star {color:var(--clr-blue);}
+
+/* Grey star */
+.empty-star {color:var(--clr-light-grey);}
+
+
+/* ====================== 2 || DESKTOP LAYOUT ====================== */
+
+/* ----------- 2.1 | HEADER  : NAVIGATION MENU ----------- */
+
+header {
+    margin-left: 3.5%;
+    margin-right: 3.5%;
+    margin-bottom: 50px;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#logo-booki {
+    height: 60px;
+}
+
+.links-container {
+    display: flex;
+    align-items: center;
+    
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 90px;
+    min-width: 200px;
+}
+
+.nav-link:link, .nav-link:visited {
+    border: 2px solid transparent;
+    display: flex;
+}
+
+.nav-link:hover, .nav-link:active {
+    color: var(--clr-blue);
+    border-top: 2px solid var(--clr-blue);
+}
+
+
+/* ----------- 2.2 | SECTION : WELCOME ----------- */
+
+#welcome-section {
+    margin-left: 3.5%;
+    margin-right: 3.5%;
+    margin-bottom: 50px;
+}
+
+
+/* ----------- 2.3 | SECTION : SEARCH ----------- */
+
+#search-section {
+    margin-left: 3.5%;
+    margin-right: 3.5%;
+}
+
+#search-form {
+    display: flex;
+    flex-direction: column;
+}
+
+#search-input-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 50px;
+    font-size: 24px;
+}
+
+.fa-map-marker-alt {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    height: 60px;
+    background-color: var(--clr-light-grey);    
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+#search-input-container input {
+    border: none;
+    border-top: 1px solid var(--clr-light-grey);
+    border-bottom: 1px solid var(--clr-light-grey);
+    padding: 0 16px 0 10px;
+    height: 60px;
+    font-weight: var(--fw-bold);
+}
+
+#search-btn-full {
+    background-color: var(--clr-blue);
+    color: white;
+    border: none;
+    height: 60px;
+    padding: 0 16px 0 16px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+#search-btn-icn {
+    display: none;
+    background-color: var(--clr-blue);
+    font-size: 24px;
+    color: white;
+    border: none;
+    height: 60px;
+    width: 60px;
+    min-width: 60px;
+    margin-left: -20px;
+    border-radius: 10px;
+}
+
+
+/*---- Search filters ----*/
+
+#search-filters {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.filter {
+    background-color: white;
+    align-content: center;
+    margin: 16px;
+    height: 60px;
+    padding: 5px 15px 5px 5px;
+    font-weight: var(--fw-bold);
+    font-size: 24px;
+    border: 2px solid var(--clr-light-grey);
+    border-radius: 50px;
+}
+
+.filter:hover {
+    color: white;
+    background-color: var(--clr-blue);
+    border-color:var(--clr-blue);
+}
+
+
+/*---- Filter icons ----*/
+
+button.filter::before {
+
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    border : 1px solid var(--clr-light-blue);
+    margin-top: -10px;
+    margin-bottom: -10px;
+    margin-left: -15px;
+    background-color: var(--clr-light-blue);
+    border-radius: 50%;
+    color: var(--clr-blue);
+}
+
+button#eco::before {
+    content: var(--fa-eco);
+    padding: 15px 14px;
+}
+
+button#fam::before {
+    content: var(--fa-fam);
+    padding: 15px 20px;
+}
+
+button#rom::before {
+    content: var(--fa-rom);
+    padding: 15px 17px;
+}
+
+button#ani::before {
+    content: var(--fa-ani);
+    padding: 15px 15px;
+}
+
+span.info::before {
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: var(--fa-info);
+    padding : 4px 13px;
+    border : 1px solid var(--clr-light-grey);
+    border-radius: 50%;
+    color: var(--clr-blue);
+}
+
+
+/* ----------- 2.4 | SECTION : ACCOMODATIONS RESULTS----------- */
+
+#results-section {
+    margin-left: 3.5%;
+    margin-right: 3.5%;
+    display: flex;
+    flex-wrap: wrap-reverse;
+    gap: 50px 2%;
+}
+
+/* 2.4.1 | CONTAINER : CITY RESULTS */
+
+#city-results {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-content: flex-start;
+    flex: 1 1 65%;
+    padding: 50px;
+    gap: 40px 40px;
+    border-radius: 25px;
+    background-color: var(--clr-light-grey);
+}
+
+#cr-title {width: 100%;}
+
+/* City results cards */
+.cr-card {
+    flex: 1 1 29%;
+    border: 5px solid white;
+    border-radius: 25px;
+    max-height: 260px;
+    min-width: 235px;
+    min-height: 235px;
+}
+
+.cr-card img {
+    height: 60%;
+    width: 100%;
+    object-fit: cover;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+}
+
+.cr-card-details {
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-left: 15px;
+}
+
+.show-more {
+    width: 100%;
+    font-weight: var(--fw-bold);  
+}
+
+
+/* 2.4.2 | CONTAINER : MOST POPULAR RESULTS */
+
+#most-popular-results {  
+    display: flex;
+    flex: 1 1 32%;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 50px;
+    gap: 20px 0;
+    border-radius: 25px;
+    background-color: var(--clr-light-grey);
+}
+
+.mpr-title {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.fa-chart-line {font-size: 30px;}
+
+
+/* Most popular results cards */
+.mpr-card {
+    display: flex;
+    flex-direction: row;
+    border-radius: 25px;
+    height: 175px;
+    min-width: 350px;
+}
+
+.mpr-card-details {
+    display: flex;
+    flex-direction: column;
+    
+    padding: 15px 50px 0 0;
+    margin-left: 15px;
+    width: 60%;
+}
+
+.mpr-card-details > * {
+    margin-bottom: 16px;
+}
+
+.mpr-card-details p {
+    flex-grow: 1;
+}
+
+.mpr-card img {
+    
+    width: 40%;
+    object-fit: cover;
+    object-position: center;
+    border: 5px solid white;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+}
+
+
+/* ----------- 2.5 | SECTION : ACTIVITIES RESULTS ----------- */
+
+#activities-results {
+    margin-left: 3.5%;
+    margin-right: 3.5%;
+}
+
+.ar-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: flex-start;
+    padding: 50px 0 50px 0;
+    gap: 20px 3%;
+}
+
+.ar-gallery-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1 1 22%;
+    height: 600px;
+    min-width: 270px;
+}
+
+.ar-container {
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+
+.big {max-height: 600px;}
+.small-1 {max-height: 320px;}
+.small-2 {max-height: 220px;}
+.small-3 {max-height: 260px;}
+.small-4 {max-height: 275px;}
+
+
+.ar-card {
+    display: flex;
+    flex-direction: column-reverse;
+    overflow: hidden;
+    border-radius: 25px;
+    height: 100%;
+    width: 100%;
+    min-width: 235px;
+}
+
+.ar-card-details {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 15px;
+}
+
+.ar-card-details h3 {
+    padding: 25px 0 25px 0;
+}
+
+.ar-img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+}
+
+
+/* ----------- 2.6 | FOOTER ----------- */
+
+footer {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 50px 0 50px 0;
+    background-color: var(--clr-light-grey);
+}
+
+footer div {
+    margin-left: 3.5%;
+    margin-right: 3.5%;
+    width: calc(100%/3);
+}
+
+ul {
+    list-style-type: none;
+}
+
+footer h3 {
+    margin-bottom: 20px;
+}
+footer li {
+    margin-bottom: 10px;
+
+}
+
+
+/* ====================== 3 || MEDIA QUERIES SPECIFIC RULES ====================== */
+
+/* ----------- 3.1 | TABLET MEDIA QUERY ----------- */
+
+/* Breakpoint : 991px and lower */
+@media screen and (max-width: 991px) {
+
+    #search-input-container {justify-content: center;}
+
+    #search-filters h3 {width: 100%;}
+
+    .show-more {font-size: 18px;}
+
+    .ar-gallery {justify-content: center;}
+
+    .ar-gallery-column {
+        height: auto;
+        gap: 20px;
+        flex: 1 0 100%;
+    }
+
+    .ar-card {height: 220px;}
+
+    footer > div > ul > li > a {font-size: 16px;}
+} 
+
+/* ----------- 3.2 | MOBILE MEDIA QUERY ----------- */
+/* Breakpoint : 767px and lower */
+
+@media screen and (max-width: 767px) {
+
+    header {margin: 0;}
+
+    #logo-booki {height: 90px;}
+
+    nav {
+        width: 100%;
+        justify-content: center;
+        margin-bottom: 50px;
+    }
+    
+    .nav-link {min-width: 100px;}
+
+    .links-container {width: 100%;}
+    
+    .nav-link, .nav-link:link, .nav-link:active {
+        width: 50%;
+        border: 2px solid transparent;
+        border-bottom: 2px solid var(--clr-light-grey);
+    }
+
+    .nav-link:hover, .nav-link:active {
+        color: var(--clr-blue);
+        border: none;
+        border-bottom: 2px solid var(--clr-blue);
+    }
+
+    .fa-map-marker-alt {
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+    }
+
+    #search-input-container input {
+        padding: 0 10px 0 10px;
+        font-size: 16px;
+    }
+
+    #search-btn-full {display:none;}
+    
+    #search-btn-icn {display: initial;}
+
+    .filter {
+        font-size: 16px;
+        height: 50px;
+    }
+
+    #results-section {
+        margin: 0;
+        margin-bottom: 50px;
+    }
+
+    #city-results {
+        background-color: white;
+        padding: 20px;
+        gap: 20px 0;
+        border-radius: 0;
+    }
+
+    .cr-card {flex: 1 1 100%;}
+
+    #most-popular-results {
+        border-radius: 0;
+        padding: 50px 25px 50px 25px;
+    }
+
+    .mpr-card {
+        font-size: 14px;
+        min-width: 250px;
+    }
+
+    footer {
+        font-size: 16px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-color: var(--clr-light-grey);
+        
+    }
+
+    footer div {
+        margin-left: 3.5%;
+        margin-bottom: 40px;
+        width: 100%;
+    }
+}
