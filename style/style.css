@@ -522,7 +522,7 @@ span.info::before {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-left: 15px;
+    margin-left: 2%;
 }
 
 .ar-card-details h3 {
