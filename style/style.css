@@ -677,7 +677,8 @@ footer li {
     }
 
     footer div {
-        margin-left: 3.5%;
+        margin: 0;
+        padding-left: 3.5%;
         margin-bottom: 40px;
         width: 100%;
     }
