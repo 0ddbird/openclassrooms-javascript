@@ -42,7 +42,6 @@ Présenté sur Firefox via live-server
 ##### 3.4.1 Point de complexité 1 : flexbox (1min)
 - Notion de container/item, notion d'axe (main/cross)
 - Disposition des éléments et limites avant breakpoints (ex. shrink d'élements contenant du texte)
-- Overlap de containers (principalement lors d'imbrication de containers flex en colonne) -> équilibre entre display flex et block
 
 ##### 3.4.2 Point de complexité 2 : animation de box-shadow (45s)
 
