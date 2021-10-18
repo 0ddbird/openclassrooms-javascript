@@ -443,9 +443,8 @@ span.info::before {
 .mpr-card-details {
     display: flex;
     flex-direction: column;
-    
     padding: 15px 2% 0 0;
-    margin-left: 15px;
+    margin-left: 2%;
     width: 60%;
 }
 
