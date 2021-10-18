@@ -681,8 +681,8 @@ footer li {
 
     footer div {
         margin: 0;
+        width: 96.5%;
         padding-left: 3.5%;
         margin-bottom: 40px;
-        width: 100%;
     }
 }
