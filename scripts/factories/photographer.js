@@ -1,3 +1,8 @@
+/**
+ * Creates photographers objects with methods to display them.
+ * @param {array} data an array of objects (photographers).
+ * @returns {object} an object with 2 keys and 2 methods.
+ */
 export function photographerFactory(data) {
     const { name, id, city, country, tagline, price, portrait } = data;
 
