@@ -1,0 +1,66 @@
+# `React controlled Select`
+
+This is a React controlled select.
+
+## How to install
+
+`npm i react-controlled-select`
+
+## Usage
+
+This component require 3 props to work:
+
+- options: an array of objects
+- selected: an object
+- setSelected: the function to set the currently selected option
+
+A single option must follow this structure :
+
+```js
+const option = {
+  label: 'Option name',
+  value: 'a unique option value'
+}
+```
+
+A set of options look like this:
+
+```js
+
+const options = [
+  {
+    label: 'Option 1',
+    value: 'value_1'
+  },
+  {
+    label: 'Option 2',
+    value: 'value_2'
+  }
+]
+```
+
+Example:
+
+```js
+import React, { useState } from 'react'
+import Select from 'react-controlled-select'
+
+const ParentComponent = () => {
+
+  const currentOptions = [
+    {
+      label: 'Option 1',
+      value: 'one'
+    },
+    {
+      label: 'Option 2',
+      value: 'two'
+    },
+
+  ]
+  const [selectedOption, setSelectedOption] = useState(currentOptions[0])
+
+  return <Select options={currentOptions} selected={selectedOption} setSelected={setSelectedOption} />
+}
+
+```
