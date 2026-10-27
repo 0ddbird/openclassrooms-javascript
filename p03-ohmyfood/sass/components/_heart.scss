@@ -1,0 +1,37 @@
+@use '../abstracts/' as a;
+
+.heart-container {
+    height: 50px;
+    height: 4em;
+    width: 4em;
+    @include a.flex-center();
+}
+
+.fa-heart {
+    font-size: 1.5em;
+    position: relative;
+    cursor: pointer;
+    color: inherit;
+    transition: color .5s ease;
+}
+
+.fa-heart::after {
+    @include a.fa-icon($content:a.$ico-heart);
+    position: absolute;
+    top: 0;
+    left: calc(50% - 0.5em);
+    color: a.$clr-secondary;
+    opacity: 0;
+
+}
+
+.fa-heart:hover {
+    opacity: 1;
+    color: a.$clr-secondary;
+    transition: color .5s ease;
+}
+
+.fa-heart:hover::after {
+    opacity: 1;
+    @include a.animation-heartBeat(.75s);
+}
