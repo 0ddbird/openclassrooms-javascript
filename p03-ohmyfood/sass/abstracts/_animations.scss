@@ -1,0 +1,43 @@
+@mixin animation-slideUp {
+    
+    @for $i from 1 through 5 {
+        & .menu-item:nth-child(#{$i}n) {
+            animation: slideUp .75s forwards ease;
+            animation-delay: #{$i * 0.25}s;
+        }
+    }
+
+    @keyframes slideUp {
+        0% {
+            transform: translateY(50px);
+            opacity: 0;
+        }
+        100% {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+}
+
+
+@mixin animation-heartBeat($duration: 1s) {
+
+    animation: heartBeat $duration ease-in-out;
+
+    @keyframes heartBeat {
+        0% {
+            opacity: 0;
+            transform: scale(0);
+        }
+
+        85% {
+            opacity: 1;
+            transform: scale(1.35);
+        }
+
+        100% {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+}
