@@ -1,0 +1,66 @@
+@use '../abstract/' as a;
+
+#galery-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;
+
+    @for $i from 1 through 15 {
+        & .media-article:nth-child(#{$i}n) {
+            animation-delay: #{$i * 0.15}s;
+        }
+    }
+}
+
+.media-article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+}
+
+.lazy-load {
+    transform: scale(0);
+    animation-name: slideUp;
+    animation-duration: .5s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+}
+
+.media-article_media {
+    @include a.square(300px);
+    object-fit: cover;
+    border-radius: 5px;
+    object-position: center top;
+    transform: translateY(0px) scale(1);
+    transition: all .25s ease;
+    box-shadow: a.$bxsh-base;
+
+    &:focus {
+        outline: none;
+        transform: translateY(-2px) scale(1.02);
+        transition: all .25s ease;
+        box-shadow: a.$bxsh-focus;
+
+    }
+    &:hover {
+        transform: translateY(-2px) scale(1.02);
+        transition: all .25s ease;
+        box-shadow: a.$bxsh-focus;
+    }
+}
+
+.buffer {
+    display: none;
+}
+
+.media-article_details {
+    text-overflow:ellipsis;
+}
+
+.media-article_details_title {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow:ellipsis;
+    font-size: 18px;
+}
