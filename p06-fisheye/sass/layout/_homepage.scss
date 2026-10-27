@@ -1,0 +1,72 @@
+@use '../abstract' as a;
+
+.photographer_section {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 70px;
+    margin-top: 100px;
+
+    @media screen and (max-width: 1200px) {
+        grid-template-columns: 1fr 1fr;
+        gap: 35px;
+    }
+    @media screen and (max-width: 600px) {
+        grid-template-columns: 1fr;
+    }
+}
+
+.photographer-article a {
+    justify-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    animation-name: fadeIn;
+    animation-duration: .75s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+.photographer-article a div {
+    justify-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.photographer-article a section {
+    justify-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.photographer-article__name {
+    font-size: 36px;
+}
+
+.photographer-article__picture {
+    height: 200px;
+    width: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.photographer-article__location {
+    color: a.$clr-primary;
+    font-weight: 500;
+}
+
+.photographer-article__tagline {
+    font-size: .75em;
+    font-weight: 500;
+}
+
+.photographer-article__price {
+    font-size: .75em;
+    font-weight: 500;
+    color: a.$clr-darkgrey;
+}
+

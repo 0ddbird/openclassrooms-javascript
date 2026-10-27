@@ -1,0 +1,85 @@
+@use '../abstract/' as a;
+
+#lightbox_modal {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background-color: white;
+    padding: 0 15px 15px 15px;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    overflow: hidden;
+    border: none;
+}
+
+.lightbox_modal_arrow {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1em;
+    font-size: 80px;
+    font-weight: 700;
+    color: a.$clr-primary;
+    cursor: pointer;
+}
+
+#left-arrow {
+    left: 0;
+}
+
+#right-arrow {
+    right: 0;
+}
+
+#lightbox_modal_main_media {
+    display: flex;
+    flex-direction: column;
+    margin: 0 1%;
+    overflow: hidden;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease;
+}
+
+[data-direction="previous"] {
+    animation-name: slideRight;
+    animation-duration: .45s;
+}
+
+[data-direction="next"] {
+    animation-name: slideLeft;
+    animation-duration: .45s;
+}
+
+[data-direction="first"] {
+    animation-name: slideUp;
+    animation-duration: .50s;
+}
+
+#lightbox_modal_close_button{
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    padding: 0;
+    cursor: pointer;
+}
+
+#lightbox_modal_media {
+    object-fit: contain;
+    margin-bottom: 1em;
+    border-radius: 5px;
+    max-height: 60vh;
+    max-width: 80vw;
+}
+
+#lightbox_modal_title {
+    font-size: 30px;
+    color: a.$clr-primary;
+    align-self: flex-end;
+}

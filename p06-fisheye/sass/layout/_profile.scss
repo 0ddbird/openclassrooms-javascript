@@ -1,0 +1,41 @@
+@use '../abstract/' as a;
+
+.photograph-header {
+    background-color: #FAFAFA;
+    height: 300px;
+    margin: 0 100px;
+}
+
+#photographer-section {
+    background-color: a.$clr-lightgrey;
+    margin: 0 5% 2em 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+}
+
+.photographer-section__picture {
+    border-radius: 50%;
+    object-fit: cover;
+    height: 200px;
+    width: 200px;
+}
+.photographer-section__profile-name {
+    font-size: 3em;
+}
+
+.photographer-section__profile-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.photographer-section__profile-details-location {
+    color: a.$clr-primary;
+    margin-bottom: 1em;
+    font-size: 24px;
+}
+.photographer-section__profile-details-tagline {
+    color: a.$clr-darkgrey;
+}
+
