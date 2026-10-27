@@ -1,0 +1,39 @@
+@use '../abstracts/' as a;
+
+.tag {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+    width: max-content;
+    padding: 9px;
+    color: white;
+    font-size: 14px;
+    font-weight: 700;
+    margin: 5px 20px 5px 0;
+}
+
+.tag-btn {
+    background: none;
+    color: white;
+    margin-left: 9px;
+    border: none;
+    cursor: pointer;
+
+    &::before {
+        @include a.fontAwesome;
+        content:'\f057';
+    }
+}
+
+.ingredients-tag {
+    background-color: a.$clr-blue;
+}
+
+.appliances-tag {
+    background-color: a.$clr-green;
+}
+
+.ustensils-tag {
+    background-color: a.$clr-red;
+}

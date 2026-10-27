@@ -1,0 +1,393 @@
+/*! minireset.css v0.0.6 | MIT License | github.com/jgthms/minireset.css */
+html, body, p, ol, ul, li, dl, dt, dd, blockquote, figure, fieldset, legend, textarea, pre, iframe, hr, h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 100%;
+  font-weight: normal;
+}
+
+ul {
+  list-style: none;
+}
+
+button, input, select {
+  margin: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+img, video {
+  height: auto;
+  max-width: 100%;
+}
+
+iframe {
+  border: 0;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td, th {
+  padding: 0;
+}
+
+* {
+  font-family: Lato, sans-serif;
+  font-weight: 400;
+}
+
+b {
+  font-weight: 700;
+}
+
+html, body {
+  box-sizing: border-box;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+}
+
+main {
+  width: 85%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#search-section {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+#search-tags {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+#result-section {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+@media screen and (max-width: 990px) {
+  #result-section {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 768px) {
+  #result-section {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+/* Colors */
+/* Border-radius */
+#search-section {
+  width: 100%;
+  /*     display: flex;
+      align-items: center; */
+  flex-flow: row wrap;
+}
+
+#searchbar {
+  width: 100%;
+  height: 70px;
+  border: none;
+  border-radius: 5px;
+  background-color: #E7E7E7;
+  margin-bottom: 20px;
+  font-size: 18px;
+  color: #ACACAC;
+  padding-left: 15px;
+}
+#searchbar:focus {
+  outline: 3px solid #ED6454;
+}
+#searchbar::placeholder {
+  opacity: 1;
+}
+
+#search_combobox-container {
+  display: flex;
+  justify-self: start;
+  flex-wrap: wrap;
+}
+@media screen and (max-width: 990px) {
+  #search_combobox-container {
+    justify-content: center;
+  }
+}
+
+#logo {
+  height: 100px;
+  width: auto;
+}
+
+#searchbar {
+  width: 100%;
+  height: 70px;
+  border: none;
+  border-radius: 5px;
+  background-color: #E7E7E7;
+  margin-bottom: 20px;
+  font-size: 18px;
+  color: #ACACAC;
+  padding-left: 15px;
+  background-image: url(../../assets/search-solid.svg);
+  background-size: 32px;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: 99% 50%;
+  background-color: #E7E7E7;
+}
+#searchbar:focus {
+  outline: 3px solid #ED6454;
+}
+#searchbar::placeholder {
+  opacity: 1;
+}
+@media screen and (max-width: 990px) {
+  #searchbar {
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 768px) {
+  #searchbar {
+    font-size: 12px;
+  }
+}
+
+#search_subfilters {
+  display: flex;
+  justify-self: start;
+}
+
+.tag {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 5px;
+  width: max-content;
+  padding: 9px;
+  color: white;
+  font-size: 14px;
+  font-weight: 700;
+  margin: 5px 20px 5px 0;
+}
+
+.tag-btn {
+  background: none;
+  color: white;
+  margin-left: 9px;
+  border: none;
+  cursor: pointer;
+}
+.tag-btn::before {
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f057";
+}
+
+.ingredients-tag {
+  background-color: #3282F7;
+}
+
+.appliances-tag {
+  background-color: #68D9A4;
+}
+
+.ustensils-tag {
+  background-color: #ED6454;
+}
+
+.combobox {
+  margin: 20px 20px 0 0;
+  border-radius: 5px;
+  overflow: hidden;
+  min-width: 130px;
+}
+
+.combobox-controls {
+  display: flex;
+  justify-content: space-between;
+  border-radius: 5px 5px 0 0;
+}
+
+.combobox-btn {
+  height: 70px;
+  width: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  color: white;
+  font-size: 18px;
+  position: relative;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: transparent;
+}
+.combobox-btn::after {
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f107";
+}
+
+.combobox-input {
+  border: none;
+  color: white;
+  font-weight: 700;
+  font-size: 18px;
+  outline: none;
+  padding: 0 15px;
+  height: 70px;
+  width: min-content;
+  background-color: transparent;
+}
+.combobox-input::placeholder {
+  color: white;
+  opacity: 1;
+}
+.combobox-input.expanded::placeholder {
+  opacity: 0.5;
+}
+
+.combobox-list {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px 50px;
+  line-height: 1em;
+  max-height: 12em;
+  color: white;
+  font-size: 18px;
+  padding: 10px;
+  border-radius: 0 0 5px 5px;
+  overflow-y: scroll;
+  scrollbar-color: rgba(255, 255, 255, 0.5) rgba(255, 255, 255, 0.1);
+  scrollbar-width: thin;
+}
+.combobox-list li {
+  cursor: pointer;
+}
+
+#ingredients-controls {
+  background-color: #3282F7;
+}
+
+#appliances-controls {
+  background-color: #68D9A4;
+}
+
+#ustensils-controls {
+  background-color: #ED6454;
+}
+
+#ingredients-list {
+  background-color: #3282F7;
+}
+
+#appliances-list {
+  background-color: #68D9A4;
+}
+
+#ustensils-list {
+  background-color: #ED6454;
+}
+
+.recipe {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+  background-color: #E7E7E7;
+  min-height: 380px;
+}
+
+.recipe-thumbnail {
+  background-color: #C7BEBE;
+}
+
+.recipe-details {
+  display: grid;
+  grid-template-areas: "title title title time" "ingr  ingr  desc  desc";
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr, 3fr;
+  padding: 20px;
+  gap: 10px;
+  overflow: hidden;
+}
+
+.recipe-title {
+  grid-area: title;
+  font-size: 18px;
+}
+
+.recipe-time {
+  grid-area: time;
+  font-size: 18px;
+  font-weight: 700;
+}
+.recipe-time::before {
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f017";
+  font-weight: 500;
+  margin-right: 1ch;
+}
+
+.recipe-ingredients {
+  grid-area: ingr;
+  font-size: 12px;
+}
+
+.recipe-description {
+  grid-area: desc;
+  display: inline-block;
+  font-size: 12px;
+  overflow: hidden;
+  overflow-wrap: break-word;
+  text-overflow: ellipsis;
+  line-height: 1em;
+  max-height: 8em;
+}
+
+.hidden {
+  display: none;
+}
+
+/*# sourceMappingURL=style.css.map */
